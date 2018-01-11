@@ -1,0 +1,58 @@
+syntax on
+set ambiwidth=double "四角や丸が崩れる問題を解決
+
+set expandtab "タブ入力を複数の空白入力に置き換える
+set tabstop=4 "画面上でタブ文字が占める幅
+set softtabstop=4 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+set smartindent "改行時に前の行のインデントを継続する
+set shiftwidth=4 "smartindetで増減する幅
+
+set incsearch "1文字入力ごとに検索を行う
+set ignorecase "検索パターンに大文字小文字を区別しない
+set smartcase "検索パターンに大文字を含んでいたら大文字小文字を区別する
+set hlsearch "検索結果をハイライト
+
+set number "行番号を表示
+set cursorline "カーソルラインをハイライト
+
+set wildmenu "コマンドモードの補完
+set history=5000 "保管するコマンド履歴
+
+" Vimのプラグイン設定
+" Note: Skip initialization for vim-tiny or vim-small.
+if 0 | endif
+
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+" Refer to |:NeoBundle-examples|.
+" Note: You don't set neobundle setting in .gvimrc!
+
+" ここに入れたいbundleを書く
+NeoBundle 'nanotech/jellybeans.vim'
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+"jellybeansカラースキーマ
+set t_Co=256
+syntax on
+colorscheme jellybeans
