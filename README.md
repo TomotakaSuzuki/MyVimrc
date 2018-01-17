@@ -8,6 +8,7 @@ $ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 ```
 vimrcへのコピー
 ```
+$ cd
 $ git clone https://github.com/TomotakaSuzuki/MyVimrc.git
 $ cd MyVimrc && cp my_vimrc ~/.vimrc
 ```
